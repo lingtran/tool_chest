@@ -1,0 +1,20 @@
+<h1> Tools of <%= @user.name %> </h1>
+
+<table id="user_tools">
+  <tr>
+    <td><b>Tool</b></td>
+    <td><b>Quantity</b></td>
+    <td><b>Price</b></td>
+    <td><b>Category</b></td>
+    <td><b>Tool Details</b></td>
+  </tr>
+  <% @tools.each do |tool| %>
+  <tr>
+    <td><%= tool.name %></td>
+    <td><%= tool.quantity %></td>
+    <td><%= tool.price %></td>
+    <td><%= tool.category.name %></td>
+    <td> <%= link_to "#{tool.name} Deets", user_tool_path(@user.id, tool.id)%> </td>
+  </tr>
+  <% end %>
+</table>

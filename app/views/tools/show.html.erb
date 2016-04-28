@@ -1,0 +1,17 @@
+<div class="tool_info">
+
+  <h3> <%= @tool.name %> </h3>
+  <ul>
+    <li> Price: <%= @tool.price %> </li>
+    <li> Quantity: <%= @tool.quantity %> </li>
+    <li> Category: <%= @tool.category.name %>  </li>
+  </ul>
+
+</div>
+
+<%= link_to "Delete", tool_path(@tool), method: :delete, data: {confirm: "Really delete the article?"} %>
+<br><br>
+
+<p>
+  <%= link_to "<< Return to Tools Index", tools_path %>
+</p>
